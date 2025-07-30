@@ -65,10 +65,10 @@ class Colors:
         ax.axis('off')  # Fjern akser
         if name:
             print_text = name +': ' + hexCode
-            save_text = name +'_' + hexCode
+            save_text = os.getcwd() + '/color_plots/' + name +'_' + hexCode
         else:
             print_text = hexCode
-            save_text = hexCode
+            save_text = os.getcwd() + '/color_plots/' + hexCode
         ax.text(0.5, 0.5, print_text, ha='center', va='center', fontsize=12, color='black',
             bbox=dict(facecolor='white', alpha=0.7, edgecolor='none', boxstyle='round,pad=0.3'))
         if save:
@@ -83,7 +83,7 @@ cl = Colors('colors.csv', ['name', 'hex_code'])
 #     {'name': 'sophisticated_red', 'hex_code': '#a64b4b'}
 #     ])
 
-print(cl.getColors())
+print(cl.getColors(showColor=True))
 
 # cl.plotColor('#ffeaab', save=True)
 # """
